@@ -12,6 +12,7 @@ class VeriFyScreen extends StatefulWidget {
 
 class _VeriFyScreenState extends State<VeriFyScreen> {
   final TextEditingController _nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -40,7 +41,7 @@ class _VeriFyScreenState extends State<VeriFyScreen> {
                       fontSize: 32,
                     ),
                   ),
-                  const Text('Please Enter your email adrees'),
+                  const Text('Please Enter your email address'),
                   const SizedBox(
                     height: 5,
                   ),
