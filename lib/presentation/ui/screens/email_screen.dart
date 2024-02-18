@@ -34,7 +34,7 @@ class _VeriFyScreenState extends State<VeriFyScreen> {
                   ),
                   AppLogo(),
                   const Text(
-                    'Welcom BAck',
+                    'Welcom Back',
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 32,
