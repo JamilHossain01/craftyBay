@@ -59,7 +59,7 @@ class _VeriFyScreenState extends State<VeriFyScreen> {
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 8),
                         child: Text(
-                          'Next',
+                          'Go to Next',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
