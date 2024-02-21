@@ -1,4 +1,4 @@
-import 'package:e_shop1/presentation/ui/screens/splash_screen.dart';
+import 'package:e_shop1/presentation/ui/screens/auth/auth1/splash_screen.dart';
 import 'package:e_shop1/presentation/ui/utility/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
