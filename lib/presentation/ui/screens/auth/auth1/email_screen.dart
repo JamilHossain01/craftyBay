@@ -1,17 +1,19 @@
-import 'package:e_shop1/presentation/ui/screens/otp_screen.dart';
 import 'package:e_shop1/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CompleteScreen extends StatefulWidget {
-  const CompleteScreen({super.key});
+import 'otp_screen.dart';
+
+class VeriFyScreen extends StatefulWidget {
+  const VeriFyScreen({super.key});
 
   @override
-  State<CompleteScreen> createState() => _CompleteScreenState();
+  State<VeriFyScreen> createState() => _VeriFyScreenState();
 }
 
-class _CompleteScreenState extends State<CompleteScreen> {
+class _VeriFyScreenState extends State<VeriFyScreen> {
   final TextEditingController _nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -30,55 +32,22 @@ class _CompleteScreenState extends State<CompleteScreen> {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 80,
+                    height: 160,
                   ),
                   AppLogo(),
                   const Text(
-                    'Complete Profile',
+                    'Welcome Back',
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: 32,
                     ),
                   ),
-                  const Text('Get Staeted us With Your Details '),
+                  const Text('Please Enter your email address'),
                   const SizedBox(
                     height: 5,
                   ),
                   TextFormField(
-                    textInputAction: TextInputAction.next,
-                    decoration: const InputDecoration(hintText: 'First Name'),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: "Last NAme"),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(hintText: 'Mobile'),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(hintText: 'City'),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    textInputAction: TextInputAction.done,
-                    maxLines: 4,
-                    decoration: InputDecoration(
-                      hintText: 'Shiping Adrees',
-                    ),
+                    decoration: const InputDecoration(hintText: 'Email'),
                   ),
                   const SizedBox(
                     height: 20,
@@ -92,7 +61,7 @@ class _CompleteScreenState extends State<CompleteScreen> {
                       child: const Padding(
                         padding: EdgeInsets.symmetric(vertical: 8),
                         child: Text(
-                          'Next',
+                          'Go to Next',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),

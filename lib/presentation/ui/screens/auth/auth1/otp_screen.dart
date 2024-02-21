@@ -1,8 +1,9 @@
-import 'package:e_shop1/presentation/ui/screens/complete_ecreen.dart';
 import 'package:e_shop1/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import 'complete_ecreen.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});

@@ -1,9 +1,10 @@
-import 'package:e_shop1/presentation/ui/screens/email_screen.dart';
 
 import 'package:e_shop1/presentation/ui/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+
+import 'email_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
