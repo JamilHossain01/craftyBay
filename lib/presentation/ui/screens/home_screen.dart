@@ -3,6 +3,8 @@ import 'package:e_shop1/presentation/ui/utility/image_path.dart';
 import 'package:e_shop1/presentation/ui/widgets/home/circle_button.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/image_carosel.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -19,26 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
-            children: [
-              searchTextField(),
-              CarouselSlider(
-                options: CarouselOptions(height: 180.0),
-                items: [1, 2, 3, 4, 5].map((i) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Container(
-                          width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.symmetric(horizontal: 1.0),
-                          decoration: BoxDecoration(color: Colors.amber),
-                          child: Text(
-                            'text $i',
-                            style: TextStyle(fontSize: 16.0),
-                          ));
-                    },
-                  );
-                }).toList(),
-              )
-            ],
+            children: [searchTextField(), ImageCarouSel()],
           ),
         ),
       ),
