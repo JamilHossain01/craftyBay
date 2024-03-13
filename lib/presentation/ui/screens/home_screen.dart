@@ -1,8 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_shop1/presentation/ui/utility/image_path.dart';
 import 'package:e_shop1/presentation/ui/widgets/home/circle_button.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/categories_items.dart';
+import '../widgets/home/product_card_items.dart';
 import '../widgets/image_carosel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,9 +22,64 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
-            children: [searchTextField(), ImageCarouSel()],
+            children: [
+              searchTextField(),
+              const ImageCarouSel(),
+              SectionTittle(
+                tittle: 'All Categories',
+                onTapSeeAll: () {},
+              ),
+              cateGoriesList(),
+              SectionTittle(tittle: 'Popular', onTapSeeAll: () {}),
+              productItemsList(),
+              SectionTittle(
+                tittle: 'Special',
+                onTapSeeAll: () {},
+              ),
+              productItemsList(),
+              SectionTittle(tittle: 'New', onTapSeeAll: () {}),
+              productItemsList(),
+            ],
           ),
         ),
+      ),
+    );
+  }
+
+  SizedBox productItemsList() {
+    return SizedBox(
+      height: 180,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const ProductCardItems();
+        },
+        separatorBuilder: (_, __) {
+          return const SizedBox(
+            width: 10,
+          );
+        },
+        itemCount: 10,
+      ),
+    );
+  }
+
+  SizedBox cateGoriesList() {
+    return SizedBox(
+      height: 140,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const CategoriesItems(
+            tittle: 'Electronics',
+          );
+        },
+        separatorBuilder: (_, __) {
+          return const SizedBox(
+            width: 10,
+          );
+        },
+        itemCount: 10,
       ),
     );
   }
@@ -32,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return TextFormField(
       decoration: InputDecoration(
         hintText: 'Search',
-        hintStyle: TextStyle(color: Colors.grey),
+        hintStyle: const TextStyle(color: Colors.grey),
         filled: true,
         fillColor: Colors.grey.shade200,
         prefixIcon: const Icon(
@@ -52,6 +108,33 @@ class _HomeScreenState extends State<HomeScreen> {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
+    );
+  }
+}
+
+class SectionTittle extends StatelessWidget {
+  const SectionTittle({
+    super.key,
+    required this.tittle,
+    required this.onTapSeeAll,
+  });
+  final String tittle;
+  final VoidCallback onTapSeeAll;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          tittle,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+        ),
+        TextButton(
+          onPressed: onTapSeeAll,
+          child: const Text('See All'),
+        ),
+      ],
     );
   }
 }

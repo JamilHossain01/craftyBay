@@ -1,7 +1,9 @@
-import 'package:e_shop1/presentation/ui/screens/auth/auth1/splash_screen.dart';
+import 'package:e_shop1/presentation/ui/screens/home_screen.dart';
 import 'package:e_shop1/presentation/ui/utility/app_theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'presentation/ui/screens/auth/main_nav_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppThemeData.lightThemeData,
-      home: const SplashScreen(),
+      home: MainBottomScreen(),
     );
   }
 }
