@@ -1,10 +1,13 @@
+import 'package:e_shop1/presentation/ui/screens/product_list_screen.dart';
 import 'package:e_shop1/presentation/ui/utility/image_path.dart';
 import 'package:e_shop1/presentation/ui/widgets/home/circle_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../widgets/categories_items.dart';
+import '../../state_controler/main_bottom_nav_controller.dart';
 import '../widgets/home/product_card_items.dart';
 import '../widgets/image_carosel.dart';
+import 'package:e_shop1/presentation/ui/widgets/categories_items.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,17 +23,23 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: appBar,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
               searchTextField(),
               const ImageCarouSel(),
               SectionTittle(
                 tittle: 'All Categories',
-                onTapSeeAll: () {},
+                onTapSeeAll: () {
+                  Get.find<MainBottomNavController>().changeIndex(1);
+                },
               ),
-              cateGoriesList(),
-              SectionTittle(tittle: 'Popular', onTapSeeAll: () {}),
+              categoriesItems(),
+              SectionTittle(
+                  tittle: 'Popular',
+                  onTapSeeAll: () {
+                    Get.to(() => const ProductListScreen());
+                  }),
               productItemsList(),
               SectionTittle(
                 tittle: 'Special',
@@ -64,13 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  SizedBox cateGoriesList() {
+  SizedBox categoriesItems() {
     return SizedBox(
-      height: 140,
+      height: 180,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const CategoriesItems(
+          return CategoriesItems(
             tittle: 'Electronics',
           );
         },
